@@ -4,11 +4,13 @@ require('pry')
 
 describe('Anagrams_antigrams') do
   check = Anagrams_antigrams.new()
-  it("Will check to see if two words provided contain exact same letters, but in differrent orders") do
+
+  #individual method testing
+  it("Will check to see if two words provided contain exact same letters, but in different orders") do
     expect(check.anagram?("aligned","dealing")).to(eq(true))
   end
 
-  it("Will check to see if two words provided do not contain exact same letters, but in differrent orders") do
+  it("Will check to see if two words provided do not contain exact same letters, but in different orders") do
     expect(check.anagram?("dog","dog")).to(eq(false))
   end
 
@@ -35,7 +37,9 @@ describe('Anagrams_antigrams') do
     expect(check.isWord?("clip","track")).to(eq(true))
   end
 
-  it("Will check to see if two words provided contain exact same letters, but in differrent orders") do
+  #Main method testing
+
+  it("Will check to see if two words provided contain exact same letters, but in different orders") do
     expect(check.allOutcome("aligned","dealing")).to(eq("These words are anagrams"))
   end
 
@@ -51,7 +55,7 @@ describe('Anagrams_antigrams') do
     expect(check.allOutcome("clp","track")).to(eq("You entered one or more words that are not words"))
   end
 
-  it("Will check to see if a word and a phrase (with a space) provided contain exact same letters, but in differrent orders") do
+  it("Will check to see if a word and a phrase (with a space) provided contain exact same letters, but in different orders") do
     expect(check.allOutcome("fingertips","finest grip")).to(eq("These words are anagrams"))
   end
 end
