@@ -23,7 +23,7 @@ describe('Anagrams_antigrams') do
     expect(check.palindrome?("racecar","racecar")).to(eq(true))
   end
 
-  it("Will check to see if two words provided contain exact same letters in reverse order") do
+  it("Will check to see if two words provided contain exact same letters and are the same in reverse order") do
     expect(check.palindrome?("dragon","dragon")).to(eq(false))
   end
 
@@ -33,6 +33,22 @@ describe('Anagrams_antigrams') do
 
   it("Will check to see if two words provided are indeed words") do
     expect(check.isWord?("clip","track")).to(eq(true))
+  end
+
+  it("Will check to see if two words provided contain exact same letters, but in differrent orders") do
+    expect(check.allOutcome("aligned","dealing")).to(eq("These words are anagrams"))
+  end
+
+  it("Will check to see if two words provided contain none of the same letters") do
+    expect(check.allOutcome("motor","slick")).to(eq("These words are antigrams"))
+  end
+
+  it("Will check to see if two words provided contain exact same letters and are the same in reverse order") do
+    expect(check.allOutcome("racecar","racecar")).to(eq("These words are palindromes"))
+  end
+
+  it("Will check to see if two words provided are indeed words") do
+    expect(check.allOutcome("clp","track")).to(eq("You entered one or more words that are not words"))
   end
 
 end

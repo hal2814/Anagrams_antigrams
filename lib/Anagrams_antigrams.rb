@@ -59,4 +59,20 @@ class Anagrams_antigrams
       return true
     end
   end
+
+  def allOutcome(word1,word2)
+    if !(isWord?(word1,word2))
+      return "You entered one or more words that are not words"
+    elsif palindrome?(word1,word2)
+      return "These words are palindromes"
+    elsif anagram?(word1,word2)
+      return "These words are anagrams"
+    elsif antigram?(word1,word2)
+      return "These words are antigrams"
+    else
+      return "These words are not palindromes, anagrams, or antigrams"
+    end
+
+  end
+
 end
