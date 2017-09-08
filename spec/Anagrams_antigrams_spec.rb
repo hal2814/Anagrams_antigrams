@@ -51,4 +51,7 @@ describe('Anagrams_antigrams') do
     expect(check.allOutcome("clp","track")).to(eq("You entered one or more words that are not words"))
   end
 
+  it("Will check to see if a word and a phrase (with a space) provided contain exact same letters, but in differrent orders") do
+    expect(check.allOutcome("fingertips","finest grip")).to(eq("These words are anagrams"))
+  end
 end
