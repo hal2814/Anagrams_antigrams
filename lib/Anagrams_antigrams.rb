@@ -2,10 +2,6 @@
 
 class Anagrams_antigrams
 
-  # def highestCount(hash)
-  #   hash.max_by{|k,v| v}
-  # end
-
   def anagram?(word1,word2)
     origin1 = word1
     origin2 = word2
@@ -57,6 +53,10 @@ class Anagrams_antigrams
   end
 
   def isWord?(word1,word2)
-
+    if (word1.scan(/[aeiou]/)).length == 0 || (word2.scan(/[aeiou]/)).length == 0
+      return false
+    else
+      return true
+    end
   end
 end

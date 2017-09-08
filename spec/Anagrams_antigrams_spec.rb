@@ -27,5 +27,12 @@ describe('Anagrams_antigrams') do
     expect(check.palindrome?("dragon","dragon")).to(eq(false))
   end
 
+  it("Will check to see if two words provided are indeed words") do
+    expect(check.isWord?("clp","track")).to(eq(false))
+  end
+
+  it("Will check to see if two words provided are indeed words") do
+    expect(check.isWord?("clip","track")).to(eq(true))
+  end
 
 end
