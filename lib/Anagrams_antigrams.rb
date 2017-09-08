@@ -2,16 +2,14 @@
 
 class Anagrams_antigrams
   def anagram(word1,word2)
-    if word1.length != word2.length
-      return "These words are not anagrams"
-    end
+    origin1 = word1
+    origin2 = word2
     word1 = word1.downcase.gsub(/[^a-z0-9]/i, '')
     word2 = word2.downcase.gsub(/[^a-z0-9]/i, '')
-    sameLetterCount = 0
     word1 = word1.chars.sort.join
     word2 = word2.chars.sort.join
 
-    if word1 == word2
+    if word1 == word2 && origin1 != origin2
       return "These words are anagrams"
     else
       return "These words are not anagrams"
