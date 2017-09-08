@@ -6,7 +6,7 @@ class Anagrams_antigrams
   #   hash.max_by{|k,v| v}
   # end
 
-  def anagram(word1,word2)
+  def anagram?(word1,word2)
     origin1 = word1
     origin2 = word2
     word1 = word1.downcase.gsub(/[^a-z0-9]/i, '')
@@ -15,13 +15,13 @@ class Anagrams_antigrams
     word2 = word2.chars.sort.join
 
     if word1 == word2 && origin1 != origin2
-      return "These words are anagrams"
+      return true #"These words are anagrams"
     else
-      return "These words are not anagrams"
+      return false
     end
   end
 
-  def antigram(word1,word2)
+  def antigram?(word1,word2)
     word1 = word1.downcase.gsub(/[^a-z0-9]/i, '')
     word2 = word2.downcase.gsub(/[^a-z0-9]/i, '')
     word1 = word1.split("").sort
@@ -38,14 +38,22 @@ class Anagrams_antigrams
     end
     addAll = count1.merge(count2)
     if count1.length + count2.length == addAll.length
-      return "These words are antigrams"
+      return true #"These words are antigrams"
     else
-      return "These words are not antigrams"
+      return false
     end
   end
 
-  def palindrome(word1,word2)
+  def palindrome?(word1,word2)
+    if word1 != word2
+      return false
+    end
 
+    if word1.reverse == word1
+      return true #"These words are palindromes"
+    else
+      return false
+    end
   end
 
   def isWord?(word1,word2)
